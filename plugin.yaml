@@ -1,5 +1,5 @@
 name: kindroid-bridge
-version: 0.1.0
+version: 0.1.1
 description: Explicit message relay to one separate external Kindroid companion.
 provides_tools:
   - kindroid_send_message

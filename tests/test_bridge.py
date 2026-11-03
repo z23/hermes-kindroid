@@ -192,7 +192,7 @@ class BridgeTests(unittest.TestCase):
         self.assertEqual(path, '/v1/send-message')
         self.assertEqual(headers['Authorization'], 'Bearer test-key')
         self.assertEqual(headers['Content-Type'], 'application/json')
-        self.assertEqual(payload, {'ai_id': 'fixed-kin', 'message': 'Hermes relay: Please advise.', 'stream': False})
+        self.assertEqual(payload, {'ai_id': 'fixed-kin', 'message': '[via Hermes]\nHermes relay: Please advise.', 'stream': False})
         self.assertEqual(len(self.server.received), 1)
 
 

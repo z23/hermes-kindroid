@@ -15,6 +15,9 @@ not the user's whole day, chat history, filesystem or memories.
   credentials, work/customer details, or private third-party information by default.
   If scope is unclear, ask before sending. Do not retrieve private context merely
   to enrich an update. Do not send full transcripts or synchronize memories.
+- The bridge automatically adds `[via Hermes]` on its own line before every
+  outgoing message. Do not add this tag manually. It marks the transport, not
+  authorship or verified identity; the supplied body remains unchanged beneath it.
 - Preserve text the user explicitly asks you to relay verbatim. Do not silently
   rewrite it or add words as though the user wrote them.
 - For assistant-authored messages, use clear framing such as: `Hermes relay, on

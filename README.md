@@ -43,7 +43,7 @@ Before a send, load `kindroid-bridge:kindroid-relay`. For example, ask Hermes to
 
 ## Behavior and failure handling
 
-The single tool accepts only `{"message": "the authorized text"}`. The destination and HTTPS endpoint are not model-controlled. It sends `POST https://api.kindroid.ai/v1/send-message` with bearer authentication, a fixed configured `ai_id`, and `stream: false`.
+The single tool accepts only `{"message": "the authorized text"}`. Every outgoing message is automatically prefixed with `[via Hermes]` on its own line; the supplied message body is preserved exactly underneath. This identifies the transport, not who authored the body: direct messages in Kindroid have no bridge-added tag. Do not add the tag manually. It is a conversational cue, not cryptographic proof of origin. The destination and HTTPS endpoint are not model-controlled. It sends `POST https://api.kindroid.ai/v1/send-message` with bearer authentication, a fixed configured `ai_id`, and `stream: false`.
 
 Redirects are refused. HTTP failures and Kindroid's HTTP-200 error markers are reported without echoing error bodies. Empty, invalid, truncated, or interrupted responses are not treated as successful replies. Sends to the same Kin are serialized within a process; this is not rate limiting or cross-process coordination.
 

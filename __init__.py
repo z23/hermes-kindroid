@@ -35,7 +35,7 @@ class _Bridge:
         if (not isinstance(args, dict) or set(args) != {'message'}
                 or not isinstance(args.get('message'), str) or not args['message'].strip()):
             return {'success': False, 'error': 'Supply only a non-empty message string.'}
-        payload = {'ai_id': self.kin_id, 'message': args['message'], 'stream': False}
+        payload = {'ai_id': self.kin_id, 'message': '[via Hermes]\n' + args['message'], 'stream': False}
         request = urllib.request.Request(self._url, data=json.dumps(payload).encode(),
                                          headers={'Authorization': 'Bearer ' + self.key,
                                                   'Content-Type': 'application/json'}, method='POST')
