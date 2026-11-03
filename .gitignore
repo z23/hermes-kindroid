@@ -1,0 +1,45 @@
+# Credentials and local configuration
+.env
+.env.*
+*.env
+secrets/
+secrets.*
+credentials*
+auth.json
+config.yaml
+*.pem
+*.key
+
+# Python and tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Runtime data and local editor artifacts
+.hermes/
+plugin-data/
+logs/
+sessions/
+memories/
+cache/
+*.log
+*.db
+*.db-*
+*.sqlite*
+*.jsonl
+.DS_Store
+.idea/
+.vscode/
+*~
